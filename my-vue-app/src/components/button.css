@@ -1,0 +1,15 @@
+.feedbackButton{
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+    font-weight: 600;
+    size: 18px;
+    text-align: center;
+    background-color: black;
+    color: #34C94B;
+    border-radius: 12px;
+    width: 170px;
+    height: 47px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

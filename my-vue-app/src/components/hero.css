@@ -1,0 +1,17 @@
+.hero {
+    background-color: #121212;
+    height: 270px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    color: #FFFFFF;
+  }
+
+  .hero h1{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: xx-large;
+  }
+  

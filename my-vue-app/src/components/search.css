@@ -1,0 +1,78 @@
+/* .search {
+  padding: 14px 20px;
+  height: 100%;
+  border-radius: 8px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  /* border: 1px solid var(--color-black); */
+*/
+
+.inputDiv input {
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  border: none;
+  border-radius: 8px;
+  padding-left: 10px;
+  font-weight: 600;
+
+}
+
+.searchInp{
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    padding-left: 15px;
+    font-family: sans-serif;
+}
+
+.searchIco {
+  display: flex;
+  width: 55px;
+  justify-content: center;
+  border: 1px solid black;
+}
+
+.inputDiv {
+  flex-direction: row;
+    justify-content: space-between;
+  background-color: white;
+  align-items: center;
+  display: flex;
+  border-radius: 8px;
+  /* gap: 25px; */
+  border: 1px solid black;
+  width: 568px;
+  height: 46px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: stretch;
+  height: 48px;
+}
+
+.searchButton {
+  border-radius: 0px 8px 8px 0px;
+  padding: 14px 20px;
+  height: 100%;
+  border: 1px solid var(--color-black);
+  border-left: none;
+  cursor: pointer;
+  height: 100%;
+}
+
+.listElement {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.albumTitle {
+  font-size: 16px;
+}
+
+.albumArtists {
+  font-size: 12px;
+}
