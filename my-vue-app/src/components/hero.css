@@ -1,17 +1,46 @@
 .hero {
-    background-color: #121212;
-    height: 270px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 30px;
-    color: #FFFFFF;
-  }
+  background-color: #121212;
+  height: 270px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* gap: 30px; */
+  color: #ffffff;
+  position: relative;
+  width: 1440px;
+}
 
-  .hero h1{
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: xx-large;
-  }
+.heroDiv{
+  display: flex;
+  flex-direction: row;
+  /* position: absolute; */
+/* top: 103px;
+left: 327px; */
+  justify-content: center;
+  align-items: center;
+
+}
+
+/* .hero boldText {
+  position: absolute;
+  width: 556;
+  height: 100;
+  top: 171px;
+  left: 327px;
+} */
+
+h1 {
+  font-size: 32px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
   
+}
+
+/* .pic img{
+  position: absolute;
+  
+top: 103px;
+left: 914px;
+
+} */
