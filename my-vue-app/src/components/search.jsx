@@ -61,7 +61,7 @@ function Search({ searchData, placeholder }) {
   };
 
   return (
-    <div>
+    <div className='SearchBar'>
       <div className='inputDiv'>
       <input
       className='searchInp'

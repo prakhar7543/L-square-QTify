@@ -8,8 +8,8 @@ import './navbar.css';
 
 function Navbar({ searchData }) {
   return (
-    <nav className= "navbar">
-      <Link to="/">
+    <nav className= "Navbar">
+      <Link to="/" className="Logo">
         <Logo />
       </Link>
       <Search
