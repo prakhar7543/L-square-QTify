@@ -1,9 +1,15 @@
 #root {
-  max-width: 1440px;
+  /* max-width: 1366px; */
   margin: 0 auto;
-  /* padding: 2rem; */
+  /* padding: 0px 32px; */
   text-align: center;
+  width: 100vw;
+  overflow-x: hidden;
 }
+
+/* .app{
+  width: 1351px;
+} */
 
 .logo {
   height: 6em;

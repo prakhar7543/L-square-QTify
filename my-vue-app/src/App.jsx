@@ -8,13 +8,13 @@ function App() {
   
 
   return (
-    <>
+    <div className='app'>
     <Router>
     <Navbar />
     <Hero />
     </Router>
     
-    </>
+    </div>
   )
 }
 
