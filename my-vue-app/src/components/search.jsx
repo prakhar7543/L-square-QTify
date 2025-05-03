@@ -62,7 +62,6 @@ function Search({ searchData, placeholder }) {
 
   return (
     <div className='SearchBar'>
-      <div className='inputDiv'>
       <input
       className='searchInp'
         type="text"
@@ -75,7 +74,7 @@ function Search({ searchData, placeholder }) {
       >
       <SearchIcon />
       </button>
-      </div>
+      
      
       <Listbox>
         {groupedOptions.map((option, index) => (
