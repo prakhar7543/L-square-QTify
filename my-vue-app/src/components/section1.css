@@ -1,0 +1,31 @@
+.outerContainer{
+    width: 100vw;
+    background-color: black;
+    padding-top: 10px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 1338px;
+    margin: auto;
+}
+
+.menuBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 34px;
+}
+
+.menuBar h4{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: white;
+    margin: 0px;
+    padding-top: 15px;
+    padding-left: 5px;
+}

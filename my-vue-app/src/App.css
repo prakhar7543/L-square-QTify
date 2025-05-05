@@ -5,6 +5,7 @@
   text-align: center;
   width: 100vw;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 /* .app{

@@ -39,6 +39,7 @@
   border-bottom-right-radius: 0px;
   border-top-right-radius: 0px;
   padding-left: 20px;
+  padding-right: 20px;
 }
 
 .searchInp::placeholder{
