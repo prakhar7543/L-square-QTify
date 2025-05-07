@@ -7,10 +7,12 @@ import { SnackbarProvider, useSnackbar } from "notistack";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
+import SwiperCards from "./swiper";
 
 export default function Section({ url, category, buttonName }) {
   let { enqueueSnackbar } = useSnackbar();
   let [cardDetails, setCardDetails] = useState(null);
+  let [showSwiper, setShowSwiper] = useState(false);
 
   let fetchCard = async (url) => {
     try {
@@ -27,6 +29,10 @@ export default function Section({ url, category, buttonName }) {
     }
   };
 
+   let handleClick = () => {
+    setShowSwiper(true);
+  }
+
   useEffect(() => {
     fetchCard(url);
   }, []);
@@ -36,6 +42,9 @@ export default function Section({ url, category, buttonName }) {
       <div className="container">
         <div className="menuBar">
           <h4>{category}</h4>
+
+          <Box onClick={handleClick} sx={{cursor: 'pointer'}}>
+            {showSwiper && <SwiperCards cardDetails={cardDetails} />}
           <Typography
             sx={{
               fontFamily: "Poppins, sans-serif",
@@ -47,6 +56,8 @@ export default function Section({ url, category, buttonName }) {
           >
             {buttonName}
           </Typography>
+          </Box>
+          
         </div>
 
         <Box>

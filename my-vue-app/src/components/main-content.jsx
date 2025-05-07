@@ -1,5 +1,5 @@
 import React from 'react'
-import Section from './section1'
+import {Section} from './section1'
 import './main-content.css'
 import Tabs from './tabs';
 
