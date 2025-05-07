@@ -1,0 +1,28 @@
+.menu {
+  align-items: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 34px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  color: white;
+  /* padding-top: 10px;
+  padding-left: 15px; */
+}
+
+.menu h4{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+
+}
+
+.tabsContainer {
+  background-color: black;
+  padding-top: 15px;
+  width: 100vw;
+}
+
+.tabsInnerContainer{
+    width: 1338px;
+}
