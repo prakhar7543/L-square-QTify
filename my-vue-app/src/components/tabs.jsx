@@ -31,10 +31,8 @@ export default function Tabs({ url, category }) {
                     backgroundColor: "#34C94B", // Change this to your desired color
                     
                   },
-                  "& .Mui-selected": {
-                    color: 'white'
-                  },
-                  '& .MuiTabs': {
+                  
+                  '& .css-mqjzoi-MuiButtonBase-root-MuiTab-root.Mui-selected': {
                     color: 'white'
                   }
                 }}
@@ -43,7 +41,7 @@ export default function Tabs({ url, category }) {
                   label="All"
                   value="All"
                   sx={{
-                    color: value === 'All' ? 'white' : 'white',
+                    color: 'white',
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: "600",
                     fontSize: "16px",
@@ -54,7 +52,7 @@ export default function Tabs({ url, category }) {
                   label="Rock"
                   value="Rock"
                   sx={{
-                    color: value === 'Rock' ? 'white' : 'white' ,
+                    color: 'white' ,
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: "600",
                     fontSize: "16px",
@@ -64,10 +62,32 @@ export default function Tabs({ url, category }) {
                   label="Pop"
                   value="Pop"
                   sx={{
-                    color: value === 'Pop' ? 'white' : 'white' ,
+                    color: 'white' ,
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: "600",
                     fontSize: "16px",
+                  }}
+                />
+                <Tab
+                  label="Jazz"
+                  value="Jazz"
+                  sx={{
+                    color: 'white',
+                    fontFamily: "Poppins, sans-serif",
+                    fontWeight: "600",
+                    fontSize: "16px",
+                    
+                  }}
+                />
+                <Tab
+                  label="Blues"
+                  value="Blues"
+                  sx={{
+                    color: 'white',
+                    fontFamily: "Poppins, sans-serif",
+                    fontWeight: "600",
+                    fontSize: "16px",
+                    
                   }}
                 />
               </TabList>
