@@ -33,8 +33,14 @@ export default function Tabs({ url, category }) {
                   },
                   
                   '& .css-mqjzoi-MuiButtonBase-root-MuiTab-root.Mui-selected': {
+                    
+                    outline: 'none'
+
+                  }, 
+                  '& .css-1t0m8ri-MuiButtonBase-root-MuiTab-root.Mui-selected': {
                     color: 'white'
                   }
+                  
                 }}
               >
                 <Tab
@@ -45,7 +51,7 @@ export default function Tabs({ url, category }) {
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: "600",
                     fontSize: "16px",
-                    
+                    textTransform: 'capitalize',
                   }}
                 />
                 <Tab
@@ -56,6 +62,7 @@ export default function Tabs({ url, category }) {
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: "600",
                     fontSize: "16px",
+                    textTransform: 'capitalize',
                   }}
                 />
                 <Tab
@@ -66,6 +73,7 @@ export default function Tabs({ url, category }) {
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: "600",
                     fontSize: "16px",
+                    textTransform: 'capitalize',
                   }}
                 />
                 <Tab
@@ -76,6 +84,7 @@ export default function Tabs({ url, category }) {
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: "600",
                     fontSize: "16px",
+                    textTransform: 'capitalize',
                     
                   }}
                 />
@@ -87,6 +96,7 @@ export default function Tabs({ url, category }) {
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: "600",
                     fontSize: "16px",
+                    textTransform: 'capitalize',
                     
                   }}
                 />

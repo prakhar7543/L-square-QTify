@@ -7,7 +7,7 @@ import Tabs from './tabs';
 export default function MainContent() {
     return (
     <>
-    <Section url="https://qtify-backend-labs.crio.do/albums/top" category={'Top Albums'} buttonName={'Show all'}/>
+    <Section url="https://qtify-backend-labs.crio.do/albums/top" category={'Top Albums'} buttonName={'Collapse'}/>
     <hr />
     <Section url="https://qtify-backend-labs.crio.do/albums/new" category={'New Albums'} buttonName={'Show all'}/>
     <hr />
