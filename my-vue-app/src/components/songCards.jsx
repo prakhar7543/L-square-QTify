@@ -5,24 +5,11 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import CardActionArea from "@mui/material/CardActionArea";
 import Chips from "./chip";
-import "./card.css";
+import "./songCards.css";
 
-// export let dummyData = {
-//   id: "ed62ef5d-89e0-45bd-9b83-792f1ba4430a",
-//   title: "Light My Fire",
-//   followers: 100,
-//   artists: ["Denise Osinski"],
-//   genre: {
-//     key: "jazz",
-//     label: "Jazz",
-//   },
-//   likes: 47221,
-//   image:
-//     "https://images.pexels.com/photos/3264736/pexels-photo-3264736.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
-//   durationInMs: 35149,
-// };
 
-export function Cards({item}) {
+
+export default function SongCards({item}) {
   return (
     <Card
       sx={{
@@ -61,7 +48,7 @@ export function Cards({item}) {
           alt="green iguana"
         />
         <div className="follow">
-          <Chips followers={`${item.follows} Follows`} />
+          <Chips followers={`${item.likes} Likes`} />
         </div>
 
         <CardContent sx={{ margin: 0, padding: 0 }}>
@@ -79,6 +66,7 @@ export function Cards({item}) {
               display: "flex",
               alignItems: "flex-end",
               justifyContent: "flex-start",
+              whiteSpace: 'nowrap',
             }}
           >
             {item.title}

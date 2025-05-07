@@ -21,7 +21,7 @@ export default function Chips({ followers }) {
     <Stack direction="row" spacing={1} sx={{paddingLeft: '4px'}}>
       <CustomChip
         
-        label={`${followers} Follows`}
+        label={followers}
         variant="outlined"
         sx={{
           height: 23,

@@ -25,4 +25,9 @@
 
 .tabsInnerContainer{
     width: 1338px;
+    margin: auto;
+}
+
+.cardsTabPanel{
+  padding: unset;
 }

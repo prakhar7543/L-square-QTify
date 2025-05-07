@@ -29,25 +29,32 @@ export default function Tabs({ url, category }) {
                 sx={{
                   "& .MuiTabs-indicator": {
                     backgroundColor: "#34C94B", // Change this to your desired color
+                    
                   },
+                  "& .Mui-selected": {
+                    color: 'white'
+                  },
+                  '& .MuiTabs': {
+                    color: 'white'
+                  }
                 }}
               >
                 <Tab
                   label="All"
                   value="All"
                   sx={{
-                    color: "white",
+                    color: value === 'All' ? 'white' : 'white',
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: "600",
                     fontSize: "16px",
-                    backgroundColor: "black",
+                    
                   }}
                 />
                 <Tab
                   label="Rock"
                   value="Rock"
                   sx={{
-                    color: "white",
+                    color: value === 'Rock' ? 'white' : 'white' ,
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: "600",
                     fontSize: "16px",
@@ -57,7 +64,7 @@ export default function Tabs({ url, category }) {
                   label="Pop"
                   value="Pop"
                   sx={{
-                    color: "white",
+                    color: value === 'Pop' ? 'white' : 'white' ,
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: "600",
                     fontSize: "16px",
@@ -66,12 +73,12 @@ export default function Tabs({ url, category }) {
               </TabList>
             </Box>
 
-            <Box>
-              <TabPanel value="All">
+            <Box className='cardsTabPanel'>
+              <TabPanel value="All" sx={{padding: 'unset'}}>
                 <SongSection url={url} />
               </TabPanel>
-              <TabPanel value="Rock">''</TabPanel>
-              <TabPanel value="Pop">''</TabPanel>
+              <TabPanel value="Rock" sx={{padding: 'unset'}}>''</TabPanel>
+              <TabPanel value="Pop" sx={{padding: 'unset'}}>''</TabPanel>
             </Box>
           </TabContext>
         </Box>

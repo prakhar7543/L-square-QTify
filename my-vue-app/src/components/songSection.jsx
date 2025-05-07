@@ -7,6 +7,7 @@ import { SnackbarProvider, useSnackbar } from "notistack";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
+import SongCards from './songCards'
 
 export default function SongSection({url}) {
   let { enqueueSnackbar } = useSnackbar();
@@ -44,7 +45,7 @@ export default function SongSection({url}) {
             <Grid container spacing={1} direction="row" gap={0}>
               {cardDetails.map((item) => (
                 <Grid item key={item.id} lg={2} md={3} sm={6}>
-                  <Cards item={item} />
+                  <SongCards item={item} />
                 </Grid>
               ))}
             </Grid>
