@@ -13,8 +13,8 @@ function App() {
     <div className="app">
       <Router>
         <SnackbarProvider>
-          {/* <Navbar />
-    <Hero /> */}
+          <Navbar />
+    <Hero />
 <MainContent />
           {/* <Cards /> */}
           {/* <Section url="https://qtify-backend-labs.crio.do/albums/top" category={'Top Albums'} buttonName={'Show all'}/> */}

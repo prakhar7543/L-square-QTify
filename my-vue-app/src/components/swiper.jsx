@@ -11,7 +11,7 @@ export default function SwiperCards({ cardDetails }) {
       direction: "horizontal", // Ensure this is set correctly
     loop: true,
     slidesPerView: 7, // Adjust based on the number of slides visible at once
-    spaceBetween: 10, // Adjust spacing between slides
+    spaceBetween: 5, // Adjust spacing between slides
     pagination: {
       el: ".swiper-pagination",
       clickable: true,

@@ -10,6 +10,7 @@
 .swiper-wrapper {
   display: flex;
   transition: transform 0.3s ease-in-out;
+  /* justify-content: center; */
 }
 
 .swiper-slide {
@@ -19,11 +20,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f0f0f0; /* Example background color */
+  /* background-color: #f0f0f0; */
   border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  */
   background-color: black;
-  margin: 16px 0px;
+  /* margin: 16px 0px; */
+  margin: unset;
 }
 
 .swiper-button-next,
@@ -45,7 +47,7 @@
   height: 32px;
   /* background-color: #34C94B; */
   border-radius: 50%;
-  /* margin: unset; */
+  margin-right: unset;
 }
 
 .css-p7ds3j-MuiPaper-root-MuiCard-root{
