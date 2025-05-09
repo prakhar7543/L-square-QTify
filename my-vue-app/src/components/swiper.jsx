@@ -7,27 +7,20 @@ import { Cards } from "./card";
 
 export default function SwiperCards({ cardDetails }) {
   useEffect(() => {
-    let swiper = new Swiper(".swiper-container", {
-      // Optional parameters
-      direction: "vertical",
-      loop: true,
-
-      // If we need pagination
-    //   pagination: {
-    //     el: ".swiper-pagination",
-    //   },
-
-      // Navigation arrows
+    new Swiper(".swiper-container", {
+      direction: "horizontal", // Ensure this is set correctly
+    loop: true,
+    slidesPerView: 7, // Adjust based on the number of slides visible at once
+    spaceBetween: 10, // Adjust spacing between slides
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
-
-      // And if we need scrollbar
-    //   scrollbar: {
-    //     el: ".swiper-scrollbar",
-    //   },
-    });
+    }
+    })
   }, []);
 
   return (
@@ -44,8 +37,12 @@ export default function SwiperCards({ cardDetails }) {
       {/* <!-- Add Pagination -->
   <div class="swiper-pagination"></div> */}
       {/* <!-- Add Navigation --> */}
-      <div className="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
+      <div className="swiper-button-next">
+        <img src='./src/assets/right.png' alt="" />
+      </div>
+      <div class="swiper-button-prev">
+        <img src="./src/assets/left.png" alt="" />
+      </div>
     </div>
   );
 }

@@ -13,6 +13,7 @@ export default function Section({ url, category, buttonName }) {
   let { enqueueSnackbar } = useSnackbar();
   let [cardDetails, setCardDetails] = useState(null);
   let [showSwiper, setShowSwiper] = useState(false);
+  let [currentButtonName, setCurrentButtonName] = useState(buttonName)
 
   let fetchCard = async (url) => {
     try {
@@ -30,7 +31,8 @@ export default function Section({ url, category, buttonName }) {
   };
 
    let handleClick = () => {
-    setShowSwiper(true);
+    setCurrentButtonName((prevName) => (prevName === 'Show All' ? 'Collapse' : 'Show All'))
+    setShowSwiper(!showSwiper);
   }
 
   useEffect(() => {
@@ -40,11 +42,12 @@ export default function Section({ url, category, buttonName }) {
   return (
     <div className="outerContainer">
       <div className="container">
-        <div className="menuBar">
-          <h4>{category}</h4>
+        {/* <div className="menuBar">
+          
+          </div> */}
 
-          <Box onClick={handleClick} sx={{cursor: 'pointer'}}>
-            {showSwiper && <SwiperCards cardDetails={cardDetails} />}
+          <Box onClick={handleClick} sx={{cursor: 'pointer'}} className='menuBar'>
+          <h4>{category}</h4>
           <Typography
             sx={{
               fontFamily: "Poppins, sans-serif",
@@ -54,24 +57,28 @@ export default function Section({ url, category, buttonName }) {
               paddingRight: "15px",
             }}
           >
-            {buttonName}
+            {currentButtonName}
           </Typography>
           </Box>
+            {showSwiper ? (<SwiperCards cardDetails={cardDetails} />) : (
+               <Box>
+               {cardDetails && (
+                 <Grid container spacing={1} direction="row" gap={0}>
+                   {cardDetails.map((item) => (
+                     <Grid item key={item.id} lg={2} md={3} sm={6}>
+                       <Cards item={item} />
+                     </Grid>
+                   ))}
+                 </Grid>
+               )}
+             </Box>
+            )}
+          
           
         </div>
 
-        <Box>
-          {cardDetails && (
-            <Grid container spacing={1} direction="row" gap={0}>
-              {cardDetails.map((item) => (
-                <Grid item key={item.id} lg={2} md={3} sm={6}>
-                  <Cards item={item} />
-                </Grid>
-              ))}
-            </Grid>
-          )}
-        </Box>
+       
       </div>
-    </div>
+   
   );
 }
