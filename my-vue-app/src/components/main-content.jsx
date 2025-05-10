@@ -9,7 +9,7 @@ export default function MainContent() {
     <>
     <Section url="https://qtify-backend-labs.crio.do/albums/top" category={'Top Albums'} buttonName={'Collapse'}/>
     <hr />
-    <Section url="https://qtify-backend-labs.crio.do/albums/new" category={'New Albums'} buttonName={'Show all'}/>
+    <Section url="https://qtify-backend-labs.crio.do/albums/new" category={'New Albums'} buttonName={'Collapse'}/>
     <hr />
     <Tabs url='https://qtify-backend-labs.crio.do/songs' category={'Songs'} />
     </>

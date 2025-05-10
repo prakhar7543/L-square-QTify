@@ -1,27 +1,42 @@
 import Swiper from "swiper/bundle";
 import "swiper/swiper-bundle.css";
 import "./swiper.css";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Section from "./section1";
 import { Cards } from "./card";
 
-export default function SwiperCards({ cardDetails }) {
+export default function SwiperCards({ cardDetails, category }) {
+  let [swiperInstance, setSwiperInstance] = useState(null);
+  let [isBeginning, setIsBeginning] = useState(true);
+  let [isEnd, setIsEnd] = useState(false);
   useEffect(() => {
-    new Swiper(".swiper-container", {
+    let swiper = new Swiper(".swiper-container", {
       direction: "horizontal", // Ensure this is set correctly
-    loop: true,
-    slidesPerView: 7, // Adjust based on the number of slides visible at once
-    spaceBetween: 5, // Adjust spacing between slides
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+      loop: true,
+      slidesPerView: 7, // Adjust based on the number of slides visible at once
+      spaceBetween: 5, // Adjust spacing between slides
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
       },
-    }
-    })
-  }, []);
+      navigation: {
+        nextEl: `.swiper-button-next-${category}`,
+        prevEl: `.swiper-button-prev-${category}`,
+        
+      },
+
+      on: {
+        slideChange: function () {
+          setIsBeginning(this.isBegining);
+          setIsEnd(this.isEnd);
+        },
+      },
+    });
+
+    setSwiperInstance(swiper);
+  }, [category]);
+
+  
 
   return (
     <div className="swiper-container">
@@ -32,17 +47,22 @@ export default function SwiperCards({ cardDetails }) {
               <Cards item={item} />
             </div>
           ))}
-        
       </div>
       {/* <!-- Add Pagination -->
   <div class="swiper-pagination"></div> */}
       {/* <!-- Add Navigation --> */}
-      <div className="swiper-button-next">
-        <img src='./src/assets/right.png' alt="" />
-      </div>
-      <div class="swiper-button-prev">
-        <img src="./src/assets/left.png" alt="" />
-      </div>
+
+      {!isBeginning && (
+        <div className={`swiper-button-prev-${category}`}>
+          <img src="./src/assets/left.png" alt="prev" />
+        </div>
+      )}
+
+      {!isEnd && (
+        <div className={`swiper-button-next-${category}`}>
+          <img src="./src/assets/right.png" alt="next" />
+        </div>
+      )}
     </div>
   );
 }

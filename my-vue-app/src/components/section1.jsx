@@ -60,7 +60,7 @@ export default function Section({ url, category, buttonName }) {
             {currentButtonName}
           </Typography>
           </Box>
-            {showSwiper ? (<SwiperCards cardDetails={cardDetails} />) : (
+            {showSwiper ? (<SwiperCards cardDetails={cardDetails} category={category} />) : (
                <Box>
                {cardDetails && (
                  <Grid container spacing={1} direction="row" gap={0}>

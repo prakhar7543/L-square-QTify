@@ -28,8 +28,7 @@
   margin: unset;
 }
 
-.swiper-button-next,
-.swiper-button-prev {
+[class*="swiper-button-next-Top Albums"] {
   position: absolute;
   top: 50%;
   width: 44px;
@@ -48,9 +47,103 @@
   /* background-color: #34C94B; */
   border-radius: 50%;
   margin-right: unset;
+  right: 1%;
+}
+[class*="swiper-button-prev-Top Albums"] {
+  position: absolute;
+  top: 50%;
+  width: 44px;
+  height: 44px;
+  margin-top: -22px;
+  z-index: 10;
+  cursor: pointer;
+  background-size: 18px 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* background-color: rgba(0, 0, 0, 0.7); */
+  /* border-radius: 50%; */
+  transition: background-color 0.3s;
+  width: 32px;
+  height: 32px;
+  /* background-color: #34C94B; */
+  border-radius: 50%;
+  margin-right: unset;
+  left: 1%;
+}
+[class*="swiper-button-next-New Albums"] {
+  position: absolute;
+  top: 50%;
+  width: 44px;
+  height: 44px;
+  margin-top: -22px;
+  z-index: 10;
+  cursor: pointer;
+  background-size: 18px 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* background-color: rgba(0, 0, 0, 0.7); */
+  /* border-radius: 50%; */
+  transition: background-color 0.3s;
+  width: 32px;
+  height: 32px;
+  /* background-color: #34C94B; */
+  border-radius: 50%;
+  margin-right: unset;
+  right: 1%;
+}
+[class*="swiper-button-prev-New Albums"] {
+  position: absolute;
+  top: 50%;
+  width: 44px;
+  height: 44px;
+  margin-top: -22px;
+  z-index: 10;
+  cursor: pointer;
+  background-size: 18px 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* background-color: rgba(0, 0, 0, 0.7); */
+  /* border-radius: 50%; */
+  transition: background-color 0.3s;
+  width: 32px;
+  height: 32px;
+  /* background-color: #34C94B; */
+  border-radius: 50%;
+  margin-right: unset;
+  left: 1%;
 }
 
-.css-p7ds3j-MuiPaper-root-MuiCard-root{
+/* .swiper-button-next {
+  position: absolute;
+  top: 50%;
+  width: 32px;
+  height: 32px;
+  margin-top: -16px; 
+  z-index: 10;
+  cursor: pointer;
+  background-size: 18px 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+} */
+
+/* .swiper-button-prev {
+  position: absolute;
+  top: 50%;
+  width: 32px;
+  height: 32px;
+  margin-top: -16px;
+  z-index: 10;
+  cursor: pointer;
+  background-size: 18px 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+} */
+
+.css-p7ds3j-MuiPaper-root-MuiCard-root {
   margin: 16px 0px;
 }
 
@@ -59,9 +152,9 @@
   background-color: rgba(0, 0, 0, 0.7);
 } */
 
-.swiper-button-next img{
+[class*="swiper-button-next-Top Albums"] img {
   right: -8px;
- margin: 0px;
+  margin: 0px;
   height: 32px;
   width: 32px;
   position: relative;
@@ -69,9 +162,28 @@
   border-radius: 50%;
 }
 
-.swiper-button-prev img{
+[class*="swiper-button-prev-Top Albums"] img {
   left: -6px;
- margin: 0px;
+  margin: 0px;
+  height: 32px;
+  position: relative;
+  width: 32px;
+  background-color: white;
+  border-radius: 50%;
+}
+[class*="swiper-button-next-New Albums"] img {
+  right: -8px;
+  margin: 0px;
+  height: 32px;
+  width: 32px;
+  position: relative;
+  background-color: white;
+  border-radius: 50%;
+}
+
+[class*="swiper-button-prev-New Albums"] img {
+  left: -6px;
+  margin: 0px;
   height: 32px;
   position: relative;
   width: 32px;
@@ -86,10 +198,23 @@
   color: white;
 } */
 
-.swiper-button-prev:after{
+.swiper-button-next-Top Albums:after {
   display: none;
 }
 
-.swiper-button-next:after{
-  display: none; 
+.swiper-button-prev-Top Albums:after {
+  display: none;
 }
+.swiper-button-next-New Albums:after {
+  display: none;
+}
+
+.swiper-button-prev-New Albums:after {
+  display: none;
+}
+
+/* [class*="arrow-Top Albums"] {
+  
+  display: flex;
+  justify-content: space-between;
+} */
