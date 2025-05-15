@@ -1,55 +1,79 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import { Navigation } from 'swiper/modules';
-import { Cards } from './card';
-import Section from "./section1";
-import './swiper.css'
+import React, { useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation } from "swiper/modules";
+import { Cards } from "./card";
+import "./swiper.css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
-export default function SwiperCards({ cardDetails }) {
+export default function SwiperCards({ cardDetails, uniqueId }) {
+  let [activeIndex, setActiveIndex] = useState(0);
+  const swiperRef = useRef(null);
+
+  // const handlePrevClick = () => {
+  //   if (swiperRef.current && swiperRef.current.swiper) {
+  //     swiperRef.current.swiper.slidePrev();
+  //     console.log("Previous button clicked");
+  //   }
+  // };
+
+  // const handleNextClick = () => {
+  //   if (swiperRef.current && swiperRef.current.swiper) {
+  //     swiperRef.current.swiper.slideNext();
+  //     console.log("Next button clicked");
+  //   }
+  // };
+
   return (
     <div className="swiper-container">
-    <Swiper
-      modules={[Navigation]}
-      spaceBetween={5}
-      slidesPerView={7}
-      navigation={{
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        }}
-      // pagination={{ clickable: true }}
-      onSlideChange={() => console.log('Slide changed')}
-      onReachEnd={() => console.log('Reached the end')}
-    >
-      {cardDetails && cardDetails.map((item, index) => (
-        <SwiperSlide key={index}>
-          <Cards item={item} />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+      <div className="swiper-wrapper">
+        <Swiper
+          modules={[Navigation]}
+          spaceBetween={0}
+          slidesPerView={7}
+          initialSlide={0}
+          centeredSlides={false}
+          loop={false}
+          navigation={{
+            nextEl: `.swiper-button-next-${uniqueId}`,
+            prevEl: `.swiper-button-prev-${uniqueId}`,
+            clickable: true,
+          }}
+          onSwiper={(swiper) => (swiperRef.current = swiper)}
+          onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+        >
+          {cardDetails &&
+            cardDetails.map((item, index) => (
+              <SwiperSlide key={index}>
+                <Cards item={item} />
+              </SwiperSlide>
+            ))}
+        </Swiper>
 
-     <div className="swiper-button-prev">
-        <img src="./src/assets/left.png" alt="Previous" />
-      </div>
-      <div className="swiper-button-next">
-        <img src="./src/assets/right.png" alt="Next" />
+        <div
+          className={`swiper-button-prev-${uniqueId} ${
+            activeIndex === 0 ? "disabled" : ""
+          }`}
+          onClick={() => swiperRef.current?.slidePrev()}
+        >
+          <img src="./src/assets/left.png" alt="Previous" />
+        </div>
+
+        <div
+          className={`swiper-button-next-${uniqueId} ${
+            activeIndex >= cardDetails.length - 7 ? "disabled" : ""
+          }`}
+          onClick={() => swiperRef.current?.slideNext()}
+        >
+          <img src="./src/assets/right.png" alt="Next" />
+        </div>
       </div>
     </div>
-
   );
 }
-
-
-
-
-
-
-
-
-
-
 
 // import Swiper from "swiper/bundle";
 // import "swiper/swiper-bundle.css";
@@ -66,7 +90,6 @@ export default function SwiperCards({ cardDetails }) {
 //   useEffect(() => {
 //     console.log(`Initializing Swiper for category: ${category}`);
 
-    
 //     const navigationOptions = category === 'Top Albums' ? {
 //       nextEl: `.swiper-button-next-Top Albums`,
 //       prevEl: `.swiper-button-prev-Top Albums`,
@@ -97,7 +120,6 @@ export default function SwiperCards({ cardDetails }) {
 
 //     setSwiperInstance(swiper);
 
-   
 //      return () => {
 //       if(swiper &&  typeof swiper.destroy === 'function'){
 //         console.log(`Destroying Swiper for category": ${category}`);
@@ -117,7 +139,7 @@ export default function SwiperCards({ cardDetails }) {
 //             </div>
 //           ))}
 //       </div>
-      
+
 //       {category === 'Top Albums' ? (
 //         <>
 //           {!isBeginning && (

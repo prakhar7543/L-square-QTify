@@ -18,7 +18,7 @@ export default function Section({ url, category, buttonName }) {
   let fetchCard = async (url) => {
     try {
       let res = await axios.get(url);
-      console.log(res.data);
+      console.log(`cardDetails ${res.data}`);
       setCardDetails(res.data);
       return res.data;
     } catch (error) {
@@ -42,9 +42,7 @@ export default function Section({ url, category, buttonName }) {
   return (
     <div className="outerContainer">
       <div className="container">
-        {/* <div className="menuBar">
-          
-          </div> */}
+        
 
           <Box onClick={handleClick} sx={{cursor: 'pointer'}} className='menuBar'>
           <h4>{category}</h4>
@@ -60,7 +58,7 @@ export default function Section({ url, category, buttonName }) {
             {currentButtonName}
           </Typography>
           </Box>
-            {showSwiper ? (<SwiperCards cardDetails={cardDetails} category={category} />) : (
+            {showSwiper ? (<SwiperCards cardDetails={cardDetails} category={category} uniqueId={category} />) : (
                <Box>
                {cardDetails && (
                  <Grid container spacing={1} direction="row" gap={0}>
