@@ -8,27 +8,16 @@ import { Cards } from "./card";
 import "./swiper.css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import SongCards from './songCards';
 
-export default function SwiperCards({ cardDetails, uniqueId }) {
+export default function SwiperCards({ cardDetails=[], uniqueId, category }) {
   let [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef(null);
 
-  // const handlePrevClick = () => {
-  //   if (swiperRef.current && swiperRef.current.swiper) {
-  //     swiperRef.current.swiper.slidePrev();
-  //     console.log("Previous button clicked");
-  //   }
-  // };
-
-  // const handleNextClick = () => {
-  //   if (swiperRef.current && swiperRef.current.swiper) {
-  //     swiperRef.current.swiper.slideNext();
-  //     console.log("Next button clicked");
-  //   }
-  // };
+  
 
   return (
-    <div className="swiper-container">
+    <div className="swiper-container" data-category={uniqueId}>``
       <div className="swiper-wrapper">
         <Swiper
           modules={[Navigation]}
@@ -48,7 +37,12 @@ export default function SwiperCards({ cardDetails, uniqueId }) {
           {cardDetails &&
             cardDetails.map((item, index) => (
               <SwiperSlide key={index}>
-                <Cards item={item} />
+                {category === 'Songs' ? (
+                  <SongCards item={item} />
+          
+        ) : (
+          <Cards item={item} />
+        )}
               </SwiperSlide>
             ))}
         </Swiper>
@@ -64,7 +58,7 @@ export default function SwiperCards({ cardDetails, uniqueId }) {
 
         <div
           className={`swiper-button-next-${uniqueId} ${
-            activeIndex >= cardDetails.length - 7 ? "disabled" : ""
+            activeIndex >= (cardDetails?.length || 0) - 7 ? "disabled" : ""
           }`}
           onClick={() => swiperRef.current?.slideNext()}
         >

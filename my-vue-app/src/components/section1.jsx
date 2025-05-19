@@ -8,12 +8,14 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import SwiperCards from "./swiper";
+import SongCards from './songCards';
 
 export default function Section({ url, category, buttonName }) {
   let { enqueueSnackbar } = useSnackbar();
   let [cardDetails, setCardDetails] = useState(null);
-  let [showSwiper, setShowSwiper] = useState(false);
-  let [currentButtonName, setCurrentButtonName] = useState(buttonName)
+  // let [showSwiper, setShowSwiper] = useState(false);
+  let [currentButtonName, setCurrentButtonName] = useState(buttonName);
+  let [showCards, setShowCards] = useState(false);
 
   let fetchCard = async (url) => {
     try {
@@ -30,10 +32,12 @@ export default function Section({ url, category, buttonName }) {
     }
   };
 
-   let handleClick = () => {
-    setCurrentButtonName((prevName) => (prevName === 'Show All' ? 'Collapse' : 'Show All'))
-    setShowSwiper(!showSwiper);
-  }
+  let handleClick = () => {
+    setCurrentButtonName((prevName) =>
+      prevName === "Collapse" ? "Show All" : "Collapse"
+    );
+    setShowCards(!showCards);
+  };
 
   useEffect(() => {
     fetchCard(url);
@@ -42,9 +46,11 @@ export default function Section({ url, category, buttonName }) {
   return (
     <div className="outerContainer">
       <div className="container">
-        
-
-          <Box onClick={handleClick} sx={{cursor: 'pointer'}} className='menuBar'>
+        <Box
+          onClick={handleClick}
+          sx={{ cursor: "pointer" }}
+          className="menuBar"
+        >
           <h4>{category}</h4>
           <Typography
             sx={{
@@ -57,26 +63,28 @@ export default function Section({ url, category, buttonName }) {
           >
             {currentButtonName}
           </Typography>
-          </Box>
-            {showSwiper ? (<SwiperCards cardDetails={cardDetails} category={category} uniqueId={category} />) : (
-               <Box>
-               {cardDetails && (
-                 <Grid container spacing={1} direction="row" gap={0}>
-                   {cardDetails.map((item) => (
-                     <Grid item key={item.id} lg={2} md={3} sm={6}>
-                       <Cards item={item} />
-                     </Grid>
-                   ))}
-                 </Grid>
-               )}
-             </Box>
-            )}
-          
-          
-        </div>
-
+        </Box>
+        
        
+          {showCards ? (
+             <Box>
+            <Grid container spacing={1} direction="row" gap={0}>
+              {cardDetails.map((item) => (
+                <Grid item key={item.id} lg={2} md={3} sm={6}>
+                  {category !== 'songs' ? (
+          <Cards item={item} />
+        ) : (
+          <SongCards item={item} />
+        )}
+                </Grid>
+              ))}
+            </Grid>
+          
+          </Box>
+        ) : (<SwiperCards cardDetails={cardDetails} category={category} uniqueId={category} />)}
+
+        
       </div>
-   
+    </div>
   );
 }

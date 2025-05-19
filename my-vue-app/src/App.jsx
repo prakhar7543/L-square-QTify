@@ -6,7 +6,7 @@ import Hero from "./components/hero";
 import { Cards } from "./components/card";
 import { SnackbarProvider } from "notistack";
 import Section from "./components/section1";
-import MainContent from './components/Main-content';
+import MainContent from './components/main-content';
 
 function App() {
   return (
