@@ -6,7 +6,8 @@ import Hero from "./components/hero";
 import { Cards } from "./components/card";
 import { SnackbarProvider } from "notistack";
 import Section from "./components/section1";
-import MainContent from './components/main-content';
+import MainContent from "./components/main-content";
+import Footer from './components/footer';
 
 function App() {
   return (
@@ -14,10 +15,11 @@ function App() {
       <Router>
         <SnackbarProvider>
           <Navbar />
-    <Hero />
-<MainContent />
+          <Hero />
+          <MainContent />
           {/* <Cards /> */}
           {/* <Section url="https://qtify-backend-labs.crio.do/albums/top" category={'Top Albums'} buttonName={'Show all'}/> */}
+          <Footer />
         </SnackbarProvider>
       </Router>
     </div>
