@@ -9,16 +9,18 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import SwiperCards from "./swiper";
 import SongCards from './songCards';
+import { CircularProgress } from "@mui/material";
 
 export default function Section({ url, category, buttonName }) {
   let { enqueueSnackbar } = useSnackbar();
-  let [cardDetails, setCardDetails] = useState(null);
-  // let [showSwiper, setShowSwiper] = useState(false);
+  let [cardDetails, setCardDetails] = useState([]);
+  let [loading , setLoading] = useState(false);
   let [currentButtonName, setCurrentButtonName] = useState(buttonName);
   let [showCards, setShowCards] = useState(false);
 
   let fetchCard = async (url) => {
     try {
+      setLoading(true);
       let res = await axios.get(url);
       console.log(`cardDetails ${res.data}`);
       setCardDetails(res.data);
@@ -30,6 +32,10 @@ export default function Section({ url, category, buttonName }) {
         enqueueSnackbar("Something went wrong", { variant: "error" });
       }
     }
+    finally{
+      setLoading(false);
+    }
+    
   };
 
   let handleClick = () => {
@@ -41,7 +47,7 @@ export default function Section({ url, category, buttonName }) {
 
   useEffect(() => {
     fetchCard(url);
-  }, []);
+  }, [url]);
 
   return (
     <div className="outerContainer">
@@ -65,8 +71,13 @@ export default function Section({ url, category, buttonName }) {
           </Typography>
         </Box>
         
-       
-          {showCards ? (
+       {loading ? (
+        <Box display="flex" justifyContent="center" alignItems="center" height="100%" padding={5} >
+            <CircularProgress sx={{color:' #34C94B'}}/>
+          </Box>
+       ) : (
+        
+          showCards ? (
              <Box>
             <Grid container spacing={1} direction="row" gap={0}>
               {cardDetails.map((item) => (
@@ -81,9 +92,9 @@ export default function Section({ url, category, buttonName }) {
             </Grid>
           
           </Box>
-        ) : (<SwiperCards cardDetails={cardDetails} category={category} uniqueId={category} />)}
+        ) : (<SwiperCards cardDetails={cardDetails} category={category} uniqueId={category} />)
 
-        
+      )}
       </div>
     </div>
   );

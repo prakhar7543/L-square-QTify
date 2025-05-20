@@ -7,14 +7,17 @@ import TabPanel from "@mui/lab/TabPanel";
 import SongSection from "./songSection";
 import "./tabs.css";
 import axios from "axios";
+import { CircularProgress } from "@mui/material";
 
 export default function Tabs({ url, category }) {
   const [value, setValue] = React.useState("All");
   let [allSongs, setAllSongs] = useState([]);
   let [genre, setGenre] = useState([]);
   let [filterSongs, setFilterSongs] = useState([]);
+  let [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true)
     let genreUrl = "https://qtify-backend-labs.crio.do/genres";
 
     let requests = [axios.get(url), axios.get(genreUrl)];
@@ -35,7 +38,12 @@ export default function Tabs({ url, category }) {
     })
       .catch((error) => {
         console.log("An error occurred:", error);
-      });
+      })
+
+      .finally(() => {
+      setLoading(false);
+    });
+
   }, [url]);
 
   useEffect(() => {
@@ -112,7 +120,11 @@ export default function Tabs({ url, category }) {
               </TabList>
             </Box>
 
-
+{loading ? (
+        <Box display="flex" justifyContent="center" alignItems="center" height="100%" padding={5} >
+            <CircularProgress sx={{color:' #34C94B'}}/>
+          </Box>
+       ) : (
             <Box className="cardsTabPanel">
               {genre.map((item) => (
               <TabPanel value={item.key} key={item.key} sx={{ padding: "unset" }}>
@@ -124,6 +136,7 @@ export default function Tabs({ url, category }) {
             </TabPanel>
               
             </Box>
+       )}
           </TabContext>
         </Box>
       </div>

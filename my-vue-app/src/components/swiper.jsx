@@ -17,7 +17,7 @@ export default function SwiperCards({ cardDetails=[], uniqueId, category }) {
   
 
   return (
-    <div className="swiper-container" data-category={uniqueId}>``
+    <div className="swiper-container" data-category={uniqueId}>
       <div className="swiper-wrapper">
         <Swiper
           modules={[Navigation]}
