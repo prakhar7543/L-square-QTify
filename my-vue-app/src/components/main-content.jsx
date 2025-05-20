@@ -8,7 +8,7 @@ export default function MainContent() {
     return (
     <div className='mainContentContainer'>
     <Section url="https://qtify-backend-labs.crio.do/albums/top" category={'Top Albums'} buttonName={'Show All'}/>
-    <hr />
+    {/* <hr /> */}
     <Section url="https://qtify-backend-labs.crio.do/albums/new" category={'New Albums'} buttonName={'Show All'}/>
     <hr />
     <Tabs url='https://qtify-backend-labs.crio.do/songs' category={'Songs'} />

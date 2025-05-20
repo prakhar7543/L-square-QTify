@@ -84,13 +84,14 @@ export default function Section({ url, category, buttonName }) {
                 <Grid item key={item.id} lg={2} md={3} sm={6}>
                   {category !== 'songs' ? (
           <Cards item={item} />
+        
         ) : (
           <SongCards item={item} />
         )}
                 </Grid>
               ))}
             </Grid>
-          
+          <hr />
           </Box>
         ) : (<SwiperCards cardDetails={cardDetails} category={category} uniqueId={category} />)
 
