@@ -10,6 +10,7 @@ import Box from "@mui/material/Box";
 import SwiperCards from "./swiper";
 import SongCards from './songCards';
 import { CircularProgress } from "@mui/material";
+// import { useHistory } from "react-router-dom";
 
 export default function Section({ url, category, buttonName }) {
   let { enqueueSnackbar } = useSnackbar();
@@ -17,6 +18,8 @@ export default function Section({ url, category, buttonName }) {
   let [loading , setLoading] = useState(false);
   let [currentButtonName, setCurrentButtonName] = useState(buttonName);
   let [showCards, setShowCards] = useState(false);
+
+  // let history = useHistory();
 
   let fetchCard = async (url) => {
     try {
@@ -48,6 +51,11 @@ export default function Section({ url, category, buttonName }) {
   useEffect(() => {
     fetchCard(url);
   }, [url]);
+
+
+  // let handleAlbumClick=() => {
+  //   history.push('')
+  // }
 
   return (
     <div className="outerContainer">
@@ -83,7 +91,7 @@ export default function Section({ url, category, buttonName }) {
               {cardDetails.map((item) => (
                 <Grid item key={item.id} lg={2} md={3} sm={6}>
                   {category !== 'songs' ? (
-          <Cards item={item} />
+          <Cards item={item}  />
         
         ) : (
           <SongCards item={item} />

@@ -8,18 +8,18 @@ import { SnackbarProvider } from "notistack";
 import Section from "./components/section1";
 import MainContent from "./components/main-content";
 import Footer from './components/footer';
+import SongsHeroSection, {DummyData} from "./songsPage/hero";
 
 function App() {
   return (
     <div className="app">
       <Router>
         <SnackbarProvider>
-          <Navbar />
+          {/* <Navbar />
           <Hero />
           <MainContent />
-          {/* <Cards /> */}
-          {/* <Section url="https://qtify-backend-labs.crio.do/albums/top" category={'Top Albums'} buttonName={'Show all'}/> */}
-          <Footer />
+          <Footer /> */}
+          <SongsHeroSection DummyData={DummyData}/>
         </SnackbarProvider>
       </Router>
     </div>
