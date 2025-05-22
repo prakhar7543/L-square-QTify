@@ -15,11 +15,11 @@ function App() {
     <div className="app">
       <Router>
         <SnackbarProvider>
-          {/* <Navbar />
+          <Navbar />
           <Hero />
           <MainContent />
-          <Footer /> */}
-          <SongsHeroSection DummyData={DummyData}/>
+          <Footer />
+          {/* <SongsHeroSection DummyData={DummyData}/> */}
         </SnackbarProvider>
       </Router>
     </div>
