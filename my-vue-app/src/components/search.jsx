@@ -37,9 +37,9 @@ const Listbox = styled('ul')`
   }
 `;
 
-function Search({ searchData, placeholder }) {
+function Search({ searchData=[], placeholder }) {
   const [value, setValue] = useState('');
-  const [groupedOptions, setGroupedOptions] = useState(searchData || []);
+  const [groupedOptions, setGroupedOptions] = useState(searchData);
   let [isPressed, setIsPressed] = useState(false);
 
   let searchButton=()=> {

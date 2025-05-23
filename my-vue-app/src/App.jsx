@@ -8,20 +8,17 @@ import { SnackbarProvider } from "notistack";
 import Section from "./components/section1";
 import MainContent from "./components/main-content";
 import Footer from './components/footer';
-import SongsHeroSection, {DummyData} from "./songsPage/hero";
+import SongsHeroSection from "./songsPage/hero";
+import HomePage from '../src/pages/homePage';
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
     <div className="app">
-      <Router>
-        <SnackbarProvider>
-          <Navbar />
-          <Hero />
-          <MainContent />
-          <Footer />
-          {/* <SongsHeroSection DummyData={DummyData}/> */}
-        </SnackbarProvider>
-      </Router>
+     
+        <Navbar />
+        {/* <Outlet /> */}
+      
     </div>
   );
 }

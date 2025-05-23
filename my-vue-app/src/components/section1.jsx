@@ -8,18 +8,20 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import SwiperCards from "./swiper";
-import SongCards from './songCards';
+import SongCards from "./songCards";
 import { CircularProgress } from "@mui/material";
+// import { useNavigate } from "react-router-dom";
+import SongsHeroSection from "../songsPage/hero";
 // import { useHistory } from "react-router-dom";
 
 export default function Section({ url, category, buttonName }) {
   let { enqueueSnackbar } = useSnackbar();
   let [cardDetails, setCardDetails] = useState([]);
-  let [loading , setLoading] = useState(false);
+  let [loading, setLoading] = useState(false);
   let [currentButtonName, setCurrentButtonName] = useState(buttonName);
   let [showCards, setShowCards] = useState(false);
 
-  // let history = useHistory();
+  // let navigate = useNavigate();
 
   let fetchCard = async (url) => {
     try {
@@ -34,11 +36,9 @@ export default function Section({ url, category, buttonName }) {
       } else {
         enqueueSnackbar("Something went wrong", { variant: "error" });
       }
-    }
-    finally{
+    } finally {
       setLoading(false);
     }
-    
   };
 
   let handleClick = () => {
@@ -52,10 +52,11 @@ export default function Section({ url, category, buttonName }) {
     fetchCard(url);
   }, [url]);
 
-
-  // let handleAlbumClick=() => {
-  //   history.push('')
-  // }
+  // let handleAlbumClick = (item) => {
+  //   console.log("card is being clicked");
+  //   SongsHeroSection({ item });
+  //   navigate("/album");
+  // };
 
   return (
     <div className="outerContainer">
@@ -78,32 +79,39 @@ export default function Section({ url, category, buttonName }) {
             {currentButtonName}
           </Typography>
         </Box>
-        
-       {loading ? (
-        <Box display="flex" justifyContent="center" alignItems="center" height="100%" padding={5} >
-            <CircularProgress sx={{color:' #34C94B'}}/>
+
+        {loading ? (
+          <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            height="100%"
+            padding={5}
+          >
+            <CircularProgress sx={{ color: " #34C94B" }} />
           </Box>
-       ) : (
-        
-          showCards ? (
-             <Box>
+        ) : showCards ? (
+          <Box>
             <Grid container spacing={1} direction="row" gap={0}>
               {cardDetails.map((item) => (
                 <Grid item key={item.id} lg={2} md={3} sm={6}>
-                  {category !== 'songs' ? (
-          <Cards item={item}  />
-        
-        ) : (
-          <SongCards item={item} />
-        )}
+                  {category !== "songs" ? (
+                    <Cards item={item}  />
+                  ) : (
+                    <SongCards item={item} />
+                  )}
                 </Grid>
               ))}
             </Grid>
-          <hr />
+            <hr />
           </Box>
-        ) : (<SwiperCards cardDetails={cardDetails} category={category} uniqueId={category} />)
-
-      )}
+        ) : (
+          <SwiperCards
+            cardDetails={cardDetails}
+            category={category}
+            uniqueId={category}
+          />
+        )}
       </div>
     </div>
   );

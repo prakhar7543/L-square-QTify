@@ -6,7 +6,7 @@ import Search from "./search";
 // import { styled } from '@mui/system';
 import './navbar.css';
 
-function Navbar({ searchData }) {
+function Navbar({ searchData=[] }) {
   return (
     <nav className= "Navbar">
       <Link to="/" className="Logo">

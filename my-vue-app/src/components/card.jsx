@@ -22,9 +22,9 @@ import "./card.css";
 //   durationInMs: 35149,
 // };
 
-export function Cards({item}) {
+export function Cards({item, onClick}) {
   return (
-    <Card
+    <Card onClick={() => onClick(item)}
       sx={{
         width: 159,
         height: 232,
