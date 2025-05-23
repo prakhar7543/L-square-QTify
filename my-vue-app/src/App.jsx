@@ -17,7 +17,7 @@ function App() {
     <div className="app">
      
         <Navbar />
-        {/* <Outlet /> */}
+        <Outlet />
       
     </div>
   );
