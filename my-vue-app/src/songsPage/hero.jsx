@@ -3,32 +3,46 @@ import "./hero.css";
 import back from "../assets/back.png";
 import shuffleButton from "../assets/shuffleButton.png";
 import addToLibraryButton from "../assets/addToLibraryButton.png";
-import Section from '../components/section1';
-
+import Section from "../components/section1";
+import AlbumPage from "../pages/albumPage";
+import { useNavigate } from "react-router-dom";
 
 export default function SongsHeroSection({ item }) {
+  const navigate = useNavigate();
+
   if (!item || !item.songs) {
     return <div>No album data available in SongsHeroSection</div>;
   }
   console.log(`items of songhero section ${item}`);
   let album = item;
   let albumSongs = album.songs;
-
-  let albumSongsImg = ({image, title}) => {
+  let albumSongsImg = ({ image, title }) => {
     return (
-    <div className="songCover">
-      <img src={image} alt="" />
-      <p>{title}</p>
-    </div>
-    )
-  }
-  
+      <div className="songCover">
+        <div className="songCoverImg">
+          <img src={image} alt="" />
+        </div>
+        <p>{title}</p>
+      </div>
+    );
+  };
+
+  let handleBackClick = () => {
+    console.log('back button has clicked')
+    navigate('/');
+  };
 
   return (
     <div className="songsContainer">
       <div className="heroSection">
+       
+
         <div className="backIcon">
-          <img src={back} alt="icon" />
+          <img
+            src={back}
+            alt="icon"
+            onClick={handleBackClick}
+            style={{ cursor: "pointer", pointerEvents: "all", margin: '30px 0px', marginLeft: '80px' }} />
         </div>
 
         <div className="albumDescription">
@@ -55,28 +69,31 @@ export default function SongsHeroSection({ item }) {
 
       <div className="mainSection">
         <div className="mainContainer">
-
           <div className="header">
             <p>Title</p>
             <p>Artists</p>
             <p>Duration</p>
           </div>
-          
-             <div className="contents">
+
+          <div className="contents">
             {albumSongs.map((item, index) => (
               <React.Fragment key={index}>
                 <div className="songContent">
                   <div className="songPic">
                     {albumSongsImg({ image: item.image, title: item.title })}
                   </div>
-                  <div className="songArtists">
-                    {item.artists.join(", ")}
-                  </div>
+                  <div className="songArtists">{item.artists.join(", ")}</div>
                   <div className="songDuration">
                     {`${item.durationInMs} ms`}
                   </div>
                 </div>
-                <hr />
+                <hr
+                  style={{
+                    borderColor: "white",
+                    margin: "revert",
+                    alignItems: "center",
+                  }}
+                />
               </React.Fragment>
             ))}
           </div>
@@ -85,9 +102,6 @@ export default function SongsHeroSection({ item }) {
     </div>
   );
 }
-
-
-
 
 // export let DummyData = [
 //   {

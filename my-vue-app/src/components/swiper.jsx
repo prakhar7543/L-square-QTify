@@ -10,19 +10,19 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import SongCards from "./songCards";
 import SongsHeroSection from "../songsPage/hero";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function SwiperCards({ cardDetails = [], uniqueId, category }) {
   let [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef(null);
 
-  // let navigate = useNavigate();
+  let navigate = useNavigate();
 
-  // let handleAlbumClick = (item) => {
-  //   console.log('card is being clicked:', item);
-  //   SongsHeroSection({ item });
-  //   navigate(`/album/${id}`, { state: { item } });
-  // };
+  let handleAlbumClick = (item, id) => {
+    console.log('card is being clicked:', item);
+    // SongsHeroSection({ item, id });
+    navigate(`/album/${id}`, { state: { item } });
+  };
 
   return (
     <div className="swiper-container" data-category={uniqueId}>
@@ -48,7 +48,7 @@ export default function SwiperCards({ cardDetails = [], uniqueId, category }) {
                 {category === "Songs" ? (
                   <SongCards item={item} />
                 ) : (
-                  <Cards item={item}  />    //onClick={() => handleAlbumClick(item, item.id)}
+                  <Cards item={item} onClick={() => handleAlbumClick(item, item.id)} />    
                 )}
               </SwiperSlide>
             ))}

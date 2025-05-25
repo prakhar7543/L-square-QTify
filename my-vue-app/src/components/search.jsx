@@ -37,7 +37,7 @@ const Listbox = styled('ul')`
   }
 `;
 
-function Search({ searchData=[], placeholder }) {
+function Search({ searchData=[], placeholder, showListbox}) {
   const [value, setValue] = useState('');
   const [groupedOptions, setGroupedOptions] = useState(searchData);
   let [isPressed, setIsPressed] = useState(false);
@@ -75,8 +75,8 @@ function Search({ searchData=[], placeholder }) {
       <SearchIcon />
       </button>
       
-     
-      <Listbox>
+     {showListbox &&
+(      <Listbox>
         {groupedOptions.map((option, index) => (
           <li key={index}>
             <div>
@@ -85,6 +85,7 @@ function Search({ searchData=[], placeholder }) {
           </li>
         ))}
       </Listbox>
+)}
     </div>
   );
 }

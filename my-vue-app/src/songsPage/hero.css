@@ -3,10 +3,11 @@
   justify-content: flex-start;
   align-items: center;
   height: 85px;
+  cursor: pointer;
 }
 
 .backIcon img {
-  margin-left: 78px;
+  /* margin-left: 78px; */
   cursor: pointer;
 }
 
@@ -38,6 +39,10 @@
 
 .descript {
   text-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 660px;
 }
 .descript p {
   margin-top: 5px;
@@ -82,19 +87,24 @@
 .songCover {
   display: flex;
   width: 154px;
-  height: 64px;
+  height: 100%;
   align-items: center;
   /* justify-content: space-around; */
   gap: 15px;
+  object-fit: cover; /* Ensures the image covers the container */
+  object-position: center;
 }
 
-.songCover p{
+.songCover p {
   text-align: start;
+  white-space: nowrap;
 }
 
-.songCover img {
+.songCoverImg img {
   width: 59px;
   height: 64px;
+  object-fit: cover; /* Ensures the image covers the container */
+  object-position: center; /* Centers the image */
   margin-left: 0px;
 }
 
@@ -126,7 +136,7 @@
 
 hr {
   border-color: white;
-  margin: revert;
+  /* margin: revert; */
   align-items: center;
 }
 

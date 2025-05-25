@@ -4,6 +4,7 @@ import MainContent from "../components/main-content";
 import Footer from '../components/footer';
 import { SnackbarProvider } from "notistack";
 import Hero from "../components/hero";
+// import Search from '../components/search';
 // import Navbar from "./components/navbar";
 // import "./App.css";
 // import { Cards } from "./components/card";
@@ -17,6 +18,7 @@ export default function HomePage(){
         <div className='homepage'>
         <SnackbarProvider>
           <Hero />
+           
           <MainContent />
           <Footer />
         </SnackbarProvider>

@@ -3,7 +3,7 @@ import "./button.css";
 
 export default function Button ({name}){
     return (
-        <div className="Button">
+        <div className="Button" style={{pointerEvents: 'all'}}>
         <button>{name}</button>
         </div>
     )

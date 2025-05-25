@@ -11,6 +11,7 @@ import Footer from './components/footer';
 import SongsHeroSection from "./songsPage/hero";
 import HomePage from '../src/pages/homePage';
 import { Outlet } from "react-router-dom";
+import FeedBack from '../src/components/feedBack';
 
 function App() {
   return (
