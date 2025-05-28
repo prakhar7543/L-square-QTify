@@ -18,7 +18,6 @@ export default function HomePage(){
         <div className='homepage'>
         <SnackbarProvider>
           <Hero />
-           
           <MainContent />
           <Footer />
         </SnackbarProvider>

@@ -6,6 +6,7 @@ import Search from "./search";
 // import { styled } from '@mui/system';
 import './navbar.css';
 import FeedBack from "./feedBack";
+import BlurSection from './blurSection';
 
 
 function Navbar({ searchData=[] }) {
@@ -15,6 +16,7 @@ function Navbar({ searchData=[] }) {
   let handleClickFeedBack = () => {
     console.log('feedback is clicked')
     setIsOpen(true);
+    
     
   }
 
@@ -33,6 +35,7 @@ function Navbar({ searchData=[] }) {
         // showListbox={true}
       />
       <Button name={"Give Feedback"} onClick={handleClickFeedBack} />
+      {isOpen && <BlurSection isOpen={isOpen} />}
       <FeedBack isOpen={isOpen} onClose={handleClose} />
     </nav>
   );

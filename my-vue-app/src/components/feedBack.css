@@ -1,5 +1,5 @@
 .feedBack-Container {
-  height: 530px;
+  height: 390px;
   width: 530px;
   border-radius: 10px;
   position: fixed;
@@ -7,15 +7,85 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  /* background-color: rgba(0, 0, 0, 0.7); */
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
 }
 
-.feedBack-Content{
-    position: relative;
-    background-color: white;
-    color: black;
+.feedBack-Content {
+  height: 530px;
+  margin-top: 10px;
+  width: 530px;
+  position: relative;
+  background-color: white;
+  color: black;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  position: relative;
+  right: -69%;
+}
+
+.heading {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .heading h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.heading img {
+  position: absolute;
+  right: 20px;
+}
+
+.formDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.formDiv form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.formDiv input,
+textarea {
+  width: 80%;
+  height: 30px;
+  border-color: #34C94B;
+  border-radius: 7px;
+  box-shadow: none;
+  border: 1px solid #34C94B;
+  padding-left: 10px;
+}
+
+.formDiv input,
+textarea::placeholder {
+  font-weight: bold;
+}
+
+.formDiv textarea{
+  height: 60px;
+}
+
+.feedButton {
+  margin: 20px;
+  background-color: #34C94B;
+  color: white;
+  font-weight: bolder;
+  width: fit-content;
+  cursor: pointer;
 }
