@@ -25,18 +25,3 @@ export default AlbumPage;
 
 
 
-
-// import React from 'react'
-// import SongsHeroSection from '../songsPage/hero'
-
-
-
-// export default function AlbumPage(){
-    
-    
-//     return (
-//         <div className='albumPageHome'>
-//           <SongsHeroSection />  
-//         </div>
-//     )
-// }

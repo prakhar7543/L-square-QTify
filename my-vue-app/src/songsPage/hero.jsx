@@ -16,6 +16,7 @@ export default function SongsHeroSection({ item }) {
   console.log(`items of songhero section ${item}`);
   let album = item;
   let albumSongs = album.songs;
+
   let albumSongsImg = ({ image, title }) => {
     return (
       <div className="songCover">
@@ -103,60 +104,3 @@ export default function SongsHeroSection({ item }) {
   );
 }
 
-// export let DummyData = [
-//   {
-//     id: "001",
-//     title: "Intentional Wood",
-//     description:
-//       "Excepturi hic sed voluptatibus. Fugiat tenetur cupiditate. Voluptatem reprehenderit animi modi tempora possimus beatae perspiciatis. Non temporibus esse atque similique eius esse quos.",
-//     follows: 13868,
-//     image:
-//       "https://images.pexels.com/photos/227692/landscape-reflection-waves-ripples-227692.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
-//     slug: "intentional-wood",
-//     songs: [
-//       {
-//         id: "89eef555-ee1d-480f-af39-3e8bae7d109e",
-//         title: "Bad",
-//         artists: ["Luz Nader"],
-//         genre: {
-//           key: "pop",
-//           label: "Pop",
-//         },
-//         likes: 89867,
-//         image:
-//           "https://images.pexels.com/photos/2418664/pexels-photo-2418664.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
-//         durationInMs: 31560,
-//       },
-//       {
-//         id: "0c695bcb-a169-453f-87db-1430b53b51e7",
-//         title: "Maybellene",
-//         artists: [
-//           "Lora Legros V",
-//           "Mr. Andres Koepp PhD",
-//           "Jeffrey Kautzer III",
-//         ],
-//         genre: {
-//           key: "pop",
-//           label: "Pop",
-//         },
-//         likes: 48932,
-//         image:
-//           "https://images.pexels.com/photos/80453/poppy-field-of-poppies-flower-flowers-80453.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
-//         durationInMs: 32776,
-//       },
-//       {
-//         id: "ca3d4a82-b3bf-4cf1-bc1c-2ca547942236",
-//         title: "Hungry Heart",
-//         artists: ["Georgia Lockman"],
-//         genre: {
-//           key: "blues",
-//           label: "Blues",
-//         },
-//         likes: 44766,
-//         image:
-//           "https://images.pexels.com/photos/425047/pexels-photo-425047.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
-//         durationInMs: 31292,
-//       },
-//     ],
-//   },
-// ];

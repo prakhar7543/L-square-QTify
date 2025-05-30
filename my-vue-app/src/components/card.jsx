@@ -7,42 +7,23 @@ import CardActionArea from "@mui/material/CardActionArea";
 import Chips from "./chip";
 import "./card.css";
 
-// export let dummyData = {
-//   id: "ed62ef5d-89e0-45bd-9b83-792f1ba4430a",
-//   title: "Light My Fire",
-//   followers: 100,
-//   artists: ["Denise Osinski"],
-//   genre: {
-//     key: "jazz",
-//     label: "Jazz",
-//   },
-//   likes: 47221,
-//   image:
-//     "https://images.pexels.com/photos/3264736/pexels-photo-3264736.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
-//   durationInMs: 35149,
-// };
-
-export function Cards({item, onClick}) {
+export function Cards({ item, onClick }) {
   return (
-    <Card onClick={() => onClick(item)}
+    <Card
+      onClick={() => onClick(item)}
       sx={{
         width: 159,
         height: 232,
         gap: 6,
         margin: 2,
         backgroundColor: "black",
-        // borderTopRightRadius: 10,
-        // borderTopLeftRadius: 10,
       }}
     >
       <CardActionArea
         sx={{
           width: 159,
           height: 205,
-          // borderBottomLeftRadius: 10,
-          // borderBottomRightRadius: 10,
           borderRadius: "10px",
-          // border: "1px solid black",
           padding: "5px",
         }}
       >

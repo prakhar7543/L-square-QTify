@@ -35,7 +35,7 @@ function Navbar({ searchData=[] }) {
         // showListbox={true}
       />
       <Button name={"Give Feedback"} onClick={handleClickFeedBack} />
-      {isOpen && <BlurSection isOpen={isOpen} />}
+      {/* {isOpen && <BlurSection isOpen={isOpen} />} */}
       <FeedBack isOpen={isOpen} onClose={handleClose} />
     </nav>
   );
