@@ -11,6 +11,8 @@ import "swiper/css/pagination";
 import SongCards from "./songCards";
 import SongsHeroSection from "../songsPage/hero";
 import { useNavigate } from "react-router-dom";
+import leftArrow from "../assets/left.png";
+import rightArrow from "../assets/right.png";
 
 export default function SwiperCards({ cardDetails = [], uniqueId, category }) {
   let [activeIndex, setActiveIndex] = useState(0);
@@ -60,7 +62,7 @@ export default function SwiperCards({ cardDetails = [], uniqueId, category }) {
           }`}
           onClick={() => swiperRef.current?.slidePrev()}
         >
-          <img src="./src/assets/left.png" alt="Previous" />
+           <img src={leftArrow} alt="Previous" />
         </div>
 
         <div
@@ -69,7 +71,7 @@ export default function SwiperCards({ cardDetails = [], uniqueId, category }) {
           }`}
           onClick={() => swiperRef.current?.slideNext()}
         >
-          <img src="./src/assets/right.png" alt="Next" />
+            <img src={rightArrow} alt="Next" />
         </div>
       </div>
     </div>
